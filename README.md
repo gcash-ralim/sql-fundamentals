@@ -24,3 +24,15 @@ SELECT * FROM north_american_cities WHERE Country="Mexico" ORDER BY Population D
 ```sql
 SELECT City,Country,Population FROM north_american_cities WHERE Country="United States" ORDER BY Population DESC LIMIT 2 OFFSET 2;
 ```
+## (Exercise 2) SQL Lesson 12: Order of execution of a Query
+
+Source: https://sqlbolt.com/lesson/select_queries_order_of_execution
+
+### 1. Find the number of movies each director has directed 
+```sql
+SELECT Director, COUNT() FROM movies GROUP BY Director;
+```
+### 2. Find the total domestic and international sales that can be attributed to each director
+```sql
+SELECT DIRECTOR, SUM(Domestic_sales + International_sales) as Sales FROM Movies INNER JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id GROUP BY Director;
+```
